@@ -24,15 +24,14 @@
 }
 
 #timer {
-  grid-area: 'timer';
+  grid-area: timer;
+  place-content: center;
 }
 
 #timer span {
 
-font-style: normal;
 font-weight: 500;
 font-size: 126rem;
-line-height: 148rem;
 text-transform: uppercase;
 
 color: var(--dark-basic-color);
@@ -40,7 +39,9 @@ color: var(--dark-basic-color);
 
 #controls {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 4rem;
+  margin-top: 48rem;
 }
 
 #controls button{
@@ -49,7 +50,7 @@ color: var(--dark-basic-color);
 }
 
 #backSounds {
-  grid-area: 'backSounds';
+  grid-area: backSounds;
   display: grid;
   grid-template-areas: 
   'forest rain'
@@ -64,8 +65,9 @@ color: var(--dark-basic-color);
   height: 152rem;
   background-color: var(--bg-sound-button);
 }
-#backSounds button img {
-  color: #02799d;
+
+#backSounds button img:hover {
+  filter: brightness(100);
 }
 
 
