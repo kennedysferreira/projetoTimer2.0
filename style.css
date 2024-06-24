@@ -49,6 +49,10 @@ color: var(--dark-basic-color);
   background-color: var(--white-img);
 }
 
+.timerOn {
+  animation: wave 7s infinite linear;
+}
+
 #backSounds {
   grid-area: backSounds;
   display: grid;
@@ -70,7 +74,14 @@ color: var(--dark-basic-color);
   filter: brightness(100);
 }
 
-
+@keyframes wave {
+  0% {
+    transform: rotate(360deg); 
+  }
+  100% {
+    transform: rotate(0deg); 
+  }
+}
 
 
 
