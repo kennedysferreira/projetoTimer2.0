@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: clamp(4%, 1% + 2vw, 6.25%);
+  font-family: 'Roboto';
+
+  --bg-sound-button: #e1e1e6;
+  --bg-sound-button-active: #02799d;
+  --dark-basic-color: #323238;
+  --white-img: #fff;
+}
+
+#app {
+  height: 100vh;
+  display: grid;
+  grid-template-areas: 
+  'timer backSounds';
+  place-content: center;
+  gap: 192rem;
+}
+
+#timer {
+  grid-area: 'timer';
+}
+
+#timer span {
+
+font-style: normal;
+font-weight: 500;
+font-size: 126rem;
+line-height: 148rem;
+text-transform: uppercase;
+
+color: var(--dark-basic-color);
+}
+
+#controls {
+  display: flex;
+  justify-content: space-around;
+}
+
+#controls button{
+  border: none;
+  background-color: var(--white-img);
+}
+
+#backSounds {
+  grid-area: 'backSounds';
+  display: grid;
+  grid-template-areas: 
+  'forest rain'
+  'coffe fire';
+  gap: 32rem;
+}
+
+#backSounds button {
+  border: none;
+  border-radius: 24rem;
+  width: 138rem;
+  height: 152rem;
+  background-color: var(--bg-sound-button);
+}
+#backSounds button img {
+  color: #02799d;
+}
+
+
+
+
+
+
