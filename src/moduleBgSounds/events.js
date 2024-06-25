@@ -3,45 +3,45 @@ import * as element from "./elements.js";
 import * as sound from "./sounds.js";
 
 const setForest = () => {
-  const forest = element.forest
-  const audio = sound.forestAudio
-  audioRunning(forest, audio)
+  toggleAudio(element.forest, sound.forestAudio);
 };
 
 const setRain = () => {
-  const rain = element.rain
-  const audio = sound.rainAudio
-  audioRunning(rain, audio)
+  toggleAudio(element.rain, sound.rainAudio);
 };
 
-const setCoffe = () => {
-  const coffe = element.coffe
-  const audio = sound.coffeAudio
-  audioRunning(coffe, audio)
+const setCoffee = () => {
+  toggleAudio(element.coffee, sound.coffeeAudio);
 };
 
 const setFire = () => {
-  const fire = element.fire
-  const audio = sound.fireAudio
-  audioRunning(fire, audio)
+  toggleAudio(element.fire, sound.fireAudio);
 };
 
-const audioRunning = (e, audio) => {
-  
-  if (!state.musicOn) {
-    state.musicOn = true;
-    e.classList.add("iconFocus");
-    audio.play();
-    return;
+const toggleAudio = (element, audio) => {
+  // Pause all audios except the current one
+  if (state.currentAudio && state.currentAudio !== audio) {
+    state.currentAudio.pause();
+    state.currentElement.classList.remove("iconFocus");
   }
-  state.musicOn = false;
-  e.classList.remove("iconFocus");
-  audio.pause();
-}
+
+  // Toggle the current audio and state
+  if (state.musicOn && state.currentAudio === audio) {
+    state.musicOn = false;
+    element.classList.remove("iconFocus");
+    audio.pause();
+  } else {
+    state.musicOn = true;
+    state.currentAudio = audio;
+    state.currentElement = element;
+    element.classList.add("iconFocus");
+    audio.play();
+  }
+};
 
 export const registerEvent = () => {
   element.forest.onclick = setForest;
   element.rain.onclick = setRain;
-  element.coffe.onclick = setCoffe;
+  element.coffee.onclick = setCoffee;
   element.fire.onclick = setFire;
 };

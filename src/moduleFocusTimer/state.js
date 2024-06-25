@@ -3,4 +3,6 @@ export const state = {
   seconds: 0,
   isRunning: false,
   musicOn: false,
+  currentAudio: null,
+  currentElement: null
 };
