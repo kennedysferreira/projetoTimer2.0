@@ -70,9 +70,18 @@ color: var(--dark-basic-color);
   background-color: var(--bg-sound-button);
 }
 
-#backSounds button img:hover {
+#backSounds button.iconFocus img {
+  
+}
+
+#backSounds button.iconFocus {
+  background-color: var(--bg-sound-button-active);
+  img {
   filter: brightness(100);
 }
+} 
+
+
 
 @keyframes wave {
   0% {
