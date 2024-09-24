@@ -1,3 +1,5 @@
+![Logo](https://imgur.com/sWJ0MIj.png)
+
 # Timer Project 2.0
 
 This project is a simple timer application built using HTML, CSS, and JavaScript. It allows users to start, stop, and reset a timer.
